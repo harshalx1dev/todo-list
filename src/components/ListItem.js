@@ -13,6 +13,7 @@ const ListItem = (props) => {
 
   const showModal = () => {
     setModalFlag(true)
+    setEditValue(props.value)
   }
 
   const closeModal = () => {

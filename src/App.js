@@ -25,6 +25,8 @@ const App = () => {
 
   const taskSubmitHandler = (event) => {
     event.preventDefault();
+    
+    if (inpValue.trim() === '') return;  
     setListItems((prevState) => {
       setLocalStorage([...prevState, inpValue])
       return [...prevState, inpValue];
