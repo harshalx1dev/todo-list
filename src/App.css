@@ -1,0 +1,32 @@
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.taskForm {
+  display: flex;
+  justify-content: center;
+}
+
+.taskForm button {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background-color: rgb(0, 219, 99);
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.taskForm button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.addIcon {
+  color: white;
+}

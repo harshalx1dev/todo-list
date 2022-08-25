@@ -1,0 +1,23 @@
+.inpComp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inpComp input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(156, 156, 156);
+  padding: 5px 10px;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.inpComp input:focus {
+  border-bottom: 2px solid black;
+}
+
+.inpComp label {
+  font-size: 25px;
+  margin-right: 20px;
+}
