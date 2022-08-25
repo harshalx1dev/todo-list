@@ -28,6 +28,7 @@
 .editTaskForm {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .editTaskForm button {
@@ -43,7 +44,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.editTask button:hover {
+.editTaskForm button:hover {
   cursor: pointer;
   background-color: black;
 }

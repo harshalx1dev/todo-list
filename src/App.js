@@ -40,8 +40,18 @@ const App = () => {
     })
   }
 
+  const taskEditHandler = (id, value) => {
+    if (value.trim() === '') return;
+
+    setListItems((prevState) => {
+      prevState[id] = value;
+      setLocalStorage([...prevState])
+      return [...prevState];
+    })
+  }
+
   return (
-    <ListStore.Provider value={{ listItems: listItems, taskDeleteHandler: taskDeleteHandler }}>
+    <ListStore.Provider value={{ listItems, taskDeleteHandler, taskEditHandler }}>
       <h1>TODO List</h1>
       <form className="taskForm" onSubmit={taskSubmitHandler}>
         <Input value={inpValue} onChange={taskInpHandler} id="itemInp" label="Task" />

@@ -9,11 +9,30 @@
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  left: 40%;
+  left: 38%;
   bottom: 55%;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   z-index: 9999;
+}
+
+.modalWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.modalWrap h2 {
+  font-size: 36px;
+}
+
+.modalCloseBtn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
