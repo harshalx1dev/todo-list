@@ -13,7 +13,7 @@ const ListItem = (props) => {
 
   const showModal = () => {
     setModalFlag(true)
-    setEditValue(props.value)
+    setEditValue(props.value.trim())
   }
 
   const closeModal = () => {
