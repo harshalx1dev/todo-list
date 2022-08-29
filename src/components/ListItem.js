@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Modal from "./Modal";
 import ListStore from "../store/listStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faPen, faFloppyDisk, faX } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan, faPen, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 import './ListItem.css'
 import Input from "./Input";
 
