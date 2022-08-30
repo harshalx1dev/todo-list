@@ -33,6 +33,7 @@ const listReducer = (state, action) => {
 
 const App = () => {
   const [regiState, setRegiState] = useState(true)
+  const [currentName, setCurrentName] = useState('')
   const [users, setUsers] = useState([{}])
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState('')
@@ -55,7 +56,8 @@ const App = () => {
     setIsLoggedIn(bool)
   } 
 
-  const setUserState = (username) => {
+  const setUserState = (username, name) => {
+    setCurrentName(name)
     setCurrentUser(username)
     const userExist = users[0].hasOwnProperty(username)
     if(!userExist) {
@@ -110,7 +112,7 @@ const App = () => {
       {/* <ListProvider> */}
       <ListStore.Provider value={{ users, listItems, taskDeleteHandler, taskEditHandler, setUserList }}>
         <header>
-          <h1>ToDo List App</h1>
+          <h1>ToDo List App {currentName && '- ' + currentName}</h1>
           {!isLoggedIn ? <button className="optionBtn" onClick={regiStateHandler}>{regiState ? 'SWITCH TO LOGIN' : 'SWITCH TO REGISTER'}</button> : <button className="optionBtn" onClick={() => { setLoginState(false) }}>LOGOUT</button>}
         </header>
         {isLoggedIn ? <Fragment>

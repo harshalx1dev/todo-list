@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import ListStore from "../../store/listStore";
 import LoginStore from "../../store/loginStore";
 import Input from "../UI/Input/Input";
 import './Login.css'
@@ -44,7 +43,7 @@ const Login = () => {
         return;
       } else {
         loginCtx.setLoginState(true)
-        loginCtx.setUserState(logUser.username)
+        loginCtx.setUserState(logUser.username, logUser.name)
         console.log(`Hello ${logUser.name}`);
       }
     }
