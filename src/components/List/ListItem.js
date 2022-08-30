@@ -1,15 +1,20 @@
-import React, { useContext, useState } from "react";
-import Modal from "./Modal";
-import ListStore from "../store/listStore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext, useEffect, useState } from "react";
 import { faTrashCan, faPen, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ListStore from "../../store/listStore";
+import Modal from "../UI/Modal/Modal";
+import Input from "../UI/Input/Input";
 import './ListItem.css'
-import Input from "./Input";
 
 const ListItem = (props) => {
   const [editValue, setEditValue] = useState(props.value)
   const [modalFlag, setModalFlag] = useState(false)
   const listCtx = useContext(ListStore)
+
+  useEffect(() => {
+    listCtx.setUserList(listCtx.listItems)
+    console.log('ListItems Changed');
+  }, [listCtx.listItems])
 
   const showModal = () => {
     setModalFlag(true)
@@ -26,6 +31,7 @@ const ListItem = (props) => {
 
   const deleteHandler = () => {
     listCtx.taskDeleteHandler(props.id)
+    listCtx.setUserList(listCtx.listItems)
   }
 
   const editSubmitHandler = (event) => {
@@ -38,7 +44,7 @@ const ListItem = (props) => {
     <div className="listItem">
       {modalFlag && <Modal title="Edit Mode" onClick={closeModal}>
         <form className="editTaskForm" onSubmit={editSubmitHandler}>
-          <Input id="editInp" label="Edit Task:" value={editValue} onChange={editInpHandler} />
+          <Input type="text" id="editInp" label="Edit Task:" value={editValue} onChange={editInpHandler} />
           <button type="submit"><FontAwesomeIcon icon={faFloppyDisk} /></button>
         </form>
       </Modal>}

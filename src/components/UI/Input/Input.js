@@ -3,9 +3,9 @@ import './Input.css'
 
 const Input = (props) => {
   return (
-    <div className="inpComp">
+    <div className={`inpComp ${props.className}`}>
       <label htmlFor={props.id}>{props.label}</label>
-      <input id={props.id} value={props.value} onChange={props.onChange} autoComplete="off" />
+      <input type={props.type} id={props.id} value={props.value} onChange={props.onChange} autoComplete="off" />
     </div>
   )
 }

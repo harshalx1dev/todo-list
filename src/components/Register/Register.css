@@ -1,0 +1,41 @@
+.regiSection {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-shadow: 4px 8px 20px 2px rgba(112, 112, 112, 0.25);
+  border-radius: 20px;
+  width: 40%;
+  margin: auto;
+}
+
+.regiSection h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.regiSection form {
+  text-align: center;
+}
+
+.regiSection .inpWrap {
+  margin-bottom: 30px;
+}
+
+.regiSection form button {
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+}
+
+.regiSection form button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
