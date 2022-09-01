@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { faTrashCan, faPen, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ListStore from "../../store/listStore";
@@ -10,11 +10,6 @@ const ListItem = (props) => {
   const [editValue, setEditValue] = useState(props.value)
   const [modalFlag, setModalFlag] = useState(false)
   const listCtx = useContext(ListStore)
-
-  useEffect(() => {
-    listCtx.setUserList(listCtx.listItems)
-    console.log('ListItems Changed');
-  }, [listCtx.listItems])
 
   const showModal = () => {
     setModalFlag(true)
@@ -31,7 +26,6 @@ const ListItem = (props) => {
 
   const deleteHandler = () => {
     listCtx.taskDeleteHandler(props.id)
-    listCtx.setUserList(listCtx.listItems)
   }
 
   const editSubmitHandler = (event) => {

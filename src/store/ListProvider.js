@@ -64,9 +64,9 @@ const ListProvider = (props) => {
   }
   
   const taskDeleteHandler = (id) => {
-    flushSync(() => {
+    // flushSync(() => {
       dispatchListItems({ type: 'DELETE', id: id })
-    })
+    // })
   }
 
   return (

@@ -5,8 +5,8 @@ import './Login.css'
 
 const Login = () => {
   const [regiUsers, setRegiUsers] = useState([])
-  const [loginUser, setLoginUser] = useState('')
-  const [loginPass, setLoginPass] = useState('')
+  const [loginUser, setLoginUser] = useState('harshal123')
+  const [loginPass, setLoginPass] = useState('test123')
 
   const loginCtx = useContext(LoginStore)
 

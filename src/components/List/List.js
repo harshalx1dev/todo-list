@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ListStore from "../../store/listStore";
 import './List.css'
 import ListItem from "./ListItem";
 
 const List = () => {
   const listCtx = useContext(ListStore)
+
+  useEffect(() => {
+    listCtx.setUserList(listCtx.listItems)
+    console.log('Your List was updated!');
+  }, [listCtx.listItems])
 
   return (
     <ul className="list">

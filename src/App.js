@@ -1,14 +1,13 @@
 import React, { Fragment, useEffect, useState, useReducer } from "react";
-import { flushSync } from "react-dom";
-import ListStore from "./store/listStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import './App.css'
+import ListStore from "./store/listStore";
 import Input from "./components/UI/Input/Input";
 import List from "./components/List/List";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import LoginStore from "./store/loginStore";
+import './App.css'
 // import ListProvider from "./store/ListProvider";
 
 const listReducer = (state, action) => {
@@ -32,7 +31,7 @@ const listReducer = (state, action) => {
 }
 
 const App = () => {
-  const [regiState, setRegiState] = useState(true)
+  const [regiState, setRegiState] = useState(false)
   const [currentName, setCurrentName] = useState('')
   const [users, setUsers] = useState([{}])
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,13 +53,13 @@ const App = () => {
 
   const setLoginState = (bool) => {
     setIsLoggedIn(bool)
-  } 
+  }
 
   const setUserState = (username, name) => {
     setCurrentName(name)
     setCurrentUser(username)
     const userExist = users[0].hasOwnProperty(username)
-    if(!userExist) {
+    if (!userExist) {
       setUsers((prevState) => {
         prevState[0][username] = listItems;
         return [...prevState];
@@ -88,7 +87,7 @@ const App = () => {
   const taskSubmitHandler = (event) => {
     event.preventDefault();
 
-    if (inpValue.trim() === '') return;  
+    if (inpValue.trim() === '') return;
 
     dispatchListItems({ type: 'ADD', value: inpValue })
 
@@ -102,9 +101,7 @@ const App = () => {
   }
 
   const taskDeleteHandler = (id) => {
-    flushSync(() => {
-      dispatchListItems({ type: 'DELETE', id: id })
-    })
+    dispatchListItems({ type: 'DELETE', id: id })
   }
 
   return (
