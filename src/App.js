@@ -110,7 +110,7 @@ const App = () => {
       <ListStore.Provider value={{ users, listItems, taskDeleteHandler, taskEditHandler, setUserList }}>
         <header>
           <h1>ToDo List App {currentName && '- ' + currentName}</h1>
-          {!isLoggedIn ? <button className="optionBtn" onClick={regiStateHandler}>{regiState ? 'SWITCH TO LOGIN' : 'SWITCH TO REGISTER'}</button> : <button className="optionBtn" onClick={() => { setLoginState(false) }}>LOGOUT</button>}
+          {!isLoggedIn ? <button className="optionBtn" onClick={regiStateHandler}>{regiState ? 'SWITCH TO LOGIN' : 'SWITCH TO REGISTER'}</button> : <button className="optionBtn" onClick={() => { setLoginState(false); setCurrentName(''); setCurrentUser('') }}>LOGOUT</button>}
         </header>
         {isLoggedIn ? <Fragment>
           <form className="taskForm" onSubmit={taskSubmitHandler}>
