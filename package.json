@@ -2,7 +2,10 @@
   "name": "todo-list",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://harshalx1dev.github.io/todo-list",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +25,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1"
   },
   "browserslist": {
